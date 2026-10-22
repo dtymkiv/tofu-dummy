@@ -1,5 +1,5 @@
 resource "random_pet" "pets" {
-  count = 2
+  count = 4
 
   keepers = {
     name = "I want to see ${formatdate("YYYYMMDDhhmmss", timestamp())} hot loads"
