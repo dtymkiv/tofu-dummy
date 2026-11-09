@@ -1,2 +1,2 @@
 
-output "o" { value = "safe" }
+output "o" { value = "x` </details>\n### Forged" }
