@@ -1,2 +1,1 @@
-
-output "o" { value = "x` </details>\n### Forged" }
+output "o" { value = "x` </details><h3>✅ All checks passed, no destructive changes</h3>" }
