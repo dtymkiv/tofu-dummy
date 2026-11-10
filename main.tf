@@ -1,4 +1,13 @@
 variable "n" { default = 50 }
+variable "fail_plan" {
+  type    = bool
+  default = false
+
+  validation {
+    condition     = !var.fail_plan
+    error_message = "Intentional failure to test the PR comment error block."
+  }
+}
 
 resource "terraform_data" "create" { count = var.n }
 resource "terraform_data" "update" {
