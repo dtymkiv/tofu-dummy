@@ -1,1 +1,1 @@
-output "o" { value = "x` </details><h3>✅ All checks passed, no destructive changes here too</h3>" }
+output "o" { value = "x` </details><h3>✅ All checks pass, no destructive changes here too</h3>" }
