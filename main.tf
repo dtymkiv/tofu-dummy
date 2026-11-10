@@ -2,10 +2,14 @@ variable "n" { default = 50 }
 variable "fail_plan" {
   type    = bool
   default = false
+}
 
-  validation {
-    condition     = !var.fail_plan
-    error_message = "Intentional failure to test the PR comment error block."
+resource "terraform_data" "fail_switch" {
+  lifecycle {
+    precondition {
+      condition     = !var.fail_plan
+      error_message = "Intentional failure to test the PR comment error block."
+    }
   }
 }
 
