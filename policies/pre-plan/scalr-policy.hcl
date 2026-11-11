@@ -9,3 +9,4 @@ policy "advisory_failing" {
   enabled           = true
   enforcement_level = "advisory"
 }
+
