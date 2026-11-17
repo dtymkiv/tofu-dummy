@@ -22,7 +22,7 @@ resource "terraform_data" "replace" {
   count            = var.n
   triggers_replace = "v1"
 }
-resource "terraform_data" "delete" { count = 0 }
+resource "terraform_data" "delete" { count = 10 }
 
 output "out" { value = { for i in range(var.n) : "k${i}" => "v2-${i}" } }
 output "o_new"  { value = "added" }
