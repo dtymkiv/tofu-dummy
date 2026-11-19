@@ -1,4 +1,4 @@
-variable "n" { default = 50 }
+variable "n" { default = 10 }
 variable "fail_plan" {
   type    = bool
   default = false
