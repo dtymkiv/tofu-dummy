@@ -16,11 +16,11 @@ resource "terraform_data" "fail_switch" {
 resource "terraform_data" "create" { count = var.n }
 resource "terraform_data" "update" {
   count = var.n
-  input = "v1"
+  input = "v2"
 }
 resource "terraform_data" "replace" {
   count            = var.n
-  triggers_replace = "v1"
+  triggers_replace = "v2"
 }
 resource "terraform_data" "delete" { count = 10 }
 
