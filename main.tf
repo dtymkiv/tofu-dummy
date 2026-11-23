@@ -33,3 +33,4 @@ resource "terraform_data" "added" { count = 15 }
 output "out" { value = { for i in range(var.n) : "k${i}" => "v2-${i}" } }
 
 output "o_new"  { value = "added" }
+
