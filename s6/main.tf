@@ -7,15 +7,10 @@ locals {
 resource "random_pet" "replace" {
   for_each = local.keys
   prefix   = "r${local.pad}"
-  keepers  = { v = "v1" }
-}
-
-resource "random_pet" "delete" {
-  for_each = local.keys
-  prefix   = "d${local.pad}"
+  keepers  = { v = "v2" }
 }
 
 resource "terraform_data" "update" {
   for_each = local.keys
-  input    = "v1"
+  input    = "v2"
 }
