@@ -19,3 +19,8 @@ resource "terraform_data" "update" {
   for_each = local.keys
   input    = "v1"
 }
+
+resource "terraform_data" "create" {
+  for_each = toset([for i in range(60) : format("%02d-%s", i, local.pad)])
+  input    = "v1"
+}
