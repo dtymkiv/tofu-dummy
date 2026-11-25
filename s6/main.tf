@@ -19,3 +19,8 @@ resource "terraform_data" "update" {
   for_each = local.keys
   input    = "v1"
 }
+
+resource "terraform_data" "small" {
+  count = 150
+  input = "x"
+}
