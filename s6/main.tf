@@ -1,5 +1,5 @@
 # Scenario 6 fixture: every listed value is near the 1024-character cap of the PR comment.
-# rerun: output diff on the first 50 lines
+# rerun: diff the first 51 lines, neutral ... marker
 locals {
   pad  = join("", [for j in range(100) : "abcdefghij"])
   keys = toset([for i in range(20) : format("%02d-%s", i, local.pad)])
