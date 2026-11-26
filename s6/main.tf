@@ -19,3 +19,11 @@ resource "terraform_data" "update" {
   for_each = local.keys
   input    = "v1"
 }
+
+output "instances" {
+  value = [for i in range(100) : { name = "web-${i}", ami = "ami-v1", size = "t3.micro" }]
+}
+
+output "fleet" {
+  value = [for i in range(100) : { name = "node-${i}", ami = "ami-v1" }]
+}
