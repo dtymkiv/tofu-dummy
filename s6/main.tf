@@ -10,25 +10,20 @@ resource "random_pet" "replace" {
   keepers  = { v = "v1" }
 }
 
-removed {
-  from = random_pet.delete
+resource "random_pet" "delete" {
+  for_each = local.keys
+  prefix   = "d${local.pad}"
 }
 
-moved {
-  from = terraform_data.update
-  to   = terraform_data.updated
-}
-
-resource "terraform_data" "updated" {
+resource "terraform_data" "update" {
   for_each = local.keys
   input    = "v1"
 }
 
-import {
-  to = random_id.imported
-  id = "p-9hUg"
+output "instances" {
+  value = [for i in range(100) : { name = "web-${i}", ami = i == 80 ? "ami-v2" : "ami-v1", size = "t3.micro" }]
 }
 
-resource "random_id" "imported" {
-  byte_length = 4
+output "fleet" {
+  value = [for i in range(100) : { name = "node-${i}", ami = "ami-v2" }]
 }
